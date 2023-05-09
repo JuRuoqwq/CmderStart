@@ -1,4 +1,4 @@
-﻿/**
+/**
 * CmderStart Project
 * Copyright (c) 2023 Storm Lab.
 *
@@ -22,6 +22,7 @@
 #include <cstdlib>
 #include <cstring>
 #include <Windows.h>
+#include <cstdio>
 
 #include "CmderStart.hpp"
 
@@ -41,14 +42,17 @@ void CmderStart::SetStartPath() const
 
 int main(int argc, char* argv[])
 {
+	FILE* pFile = fopen("crash-log.log","w+");
 	if (argc == 1) {
 		//No args
 		cerr << "[Error] Missing args" << endl;
+		fputs("[Error] Missing args\n",pFile);
 		exit(0);
 	}
 	else if (argc > 2) {
 		//too many args
 		cerr << "[Error] Too many args" << endl;
+		fputs("[Error] Too many args\n", pFile);
 		exit(0);
 	}
 	cout << "[Info] Welcome to CmderStart Project" << endl;
