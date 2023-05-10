@@ -16,6 +16,8 @@
 * along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
+#define _CRT_SECURE_NO_WARNINGS //F you MS!!!!
+
 #include <iostream>
 #include <cstdlib>
 #include <Windows.h>
@@ -40,6 +42,10 @@ void CmderStart::SetStartPath() const
 int main(int argc, char* argv[])
 {
 	FILE* pFile = fopen("crash-log.log","w+");
+	if (pFile == NULL) {
+		cerr << "[Error] Can't open file stream" << endl;
+		exit(0);
+	}
 	if (argc == 1) {
 		//No args
 		cerr << "[Error] Missing args" << endl;
