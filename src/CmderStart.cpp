@@ -41,6 +41,7 @@ void CmderStart::SetStartPath() const
 
 int main(int argc, char* argv[])
 {
+	CmderStart cmder(argv[1]);
 	FILE* pFile = fopen("crash-log.log","w+");
 	if (pFile == NULL) {
 		cerr << "[Error] Can't open file stream" << endl;
@@ -59,10 +60,9 @@ int main(int argc, char* argv[])
 		exit(0);
 	}
 	cout << "[Info] Welcome to CmderStart Project" << endl;
-	Sleep(500); //单纯为了假装在加载233
+	Sleep(1500); //单纯为了假装在加载233
 	cout << "[Info] Starting Cmder with path " << argv[1] << endl;
-	Sleep(500);
-	CmderStart cmder(argv[1]);
+	Sleep(2000);
 	cmder.SetStartPath();
 	return 0;
 }
