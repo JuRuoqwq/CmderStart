@@ -16,11 +16,8 @@
 * along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-#define _CRT_SECURE_NO_WARNINGS //Microsoft,f**k you
-
 #include <iostream>
 #include <cstdlib>
-#include <cstring>
 #include <Windows.h>
 #include <cstdio>
 
